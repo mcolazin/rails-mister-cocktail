@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+</head>
+<body>
+  <div class="container">
+    <h3> Forma de preparo do coquetel <%= @cocktail.name %> </h3>
+    <br><br>
+
+    <% @cocktail.doses.each do |dose| %>
+      <h4> Ingrediente: <%= dose.ingredient.name %> </h4>
+      <h4> Descrição: <%= dose.description %> </h4>
+        <%= link_to dose_path(dose), method: :delete, data: {confirm: "Você tem Certeza?"} do %>
+        <i class="fa fa-trash destroy_dose"></i>
+        <% end %>
+      <% end %>
+
+      <%= render "doses/new", cocktail: @cocktail, dose: @dose %>
+
+    <div class="link_root">
+      <%= link_to "Voltar para a lista de Coquetéis", root_path %>
+    </div>
+  </div>
+</body>
+</html>

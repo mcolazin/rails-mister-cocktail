@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+</head>
+<body>
+  <div class="container">
+    <ul>
+      <h1> Bem vindo ao canal de coquetéis </h1>
+      <% @cocktails.each do |cocktail| %>
+        <li><h3><%=  "#{cocktail.name}" %></h3></li>
+        <%= link_to "", cocktail_path(cocktail) %>
+      <% end %>
+    </ul>
+
+    <div class="link_new">
+      <h3><%= link_to "Adicione um novo Coquetel", new_cocktail_path, class:"btn btn-primary btn-lg" %> </h3>
+    </div>
+
+  </div>
+
+
+</body>
+</html>
