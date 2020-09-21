@@ -1,24 +1,24 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title></title>
-</head>
-<body>
-  <div class="container">
-    <ul>
-      <h1> Bem vindo ao canal de coquetéis </h1>
-      <% @cocktails.each do |cocktail| %>
-        <li><h3><%=  "#{cocktail.name}" %></h3></li>
-        <%= link_to "", cocktail_path(cocktail) %>
-      <% end %>
-    </ul>
-
-    <div class="link_new">
-      <h3><%= link_to "Adicione um novo Coquetel", new_cocktail_path, class:"btn btn-primary btn-lg" %> </h3>
-    </div>
-
+<div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%) ,url('https://thumbs.dreamstime.com/b/drunk-man-27567500.jpg') ">
+  <div class="banner-content">
+    <h1>Coquetéis da Depressão</h1>
+    <p> Conheçam os Drinks especiais que te arremessam pro buraco </p>
+    <%= link_to "Adicione um novo Coquetel", new_cocktail_path, class:"btn btn-primary btn-lg" %>
   </div>
 
+</div>
 
-</body>
-</html>
+<div class="container">
+  <div class="row">
+    <% @cocktails.each do |cocktail| %>
+      <div class="col-12 col-md-6 col-lg-3">
+        <div class="card" style="background-image:linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://thumbs.dreamstime.com/b/lim%C3%A3o-podre-isolado-no-branco-96633943.jpg');">
+          <div class="card-description">
+          <h2><%= link_to "#{cocktail.name}", cocktail_path(cocktail) %></h2>
+        </div>
+      </div>
+    </div>
+  </div>
+  <% end %>
+</div>
+
+
