@@ -7,4 +7,4 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 # Ingredient.create(name: "tangerine")
 # Ingredient.create(name: "vodka")
-# Cocktail.destroy(2)
+# Cocktail.destroy(1)
